@@ -1,0 +1,28 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+	"background": {
+	  "scripts": [ "/js/base64.js", "/js/tabThumbnail.js", "/js/ParseURL.js", "/js/background.js"]
+	},
+	"web_accessible_resources": [ "/style.css", "/blocked.html" ],
+	"content_security_policy": "script-src 'self'; object-src 'self'",
+	"description": "__MSG_plugindescription__",
+	"manifest_version": 2,
+	"default_locale": "en",
+	"offline_enabled": true,
+	"name": "__MSG_packageName__",
+	"permissions": [ "tabs", "activeTab", "webNavigation", "webRequest", "webRequestBlocking", "<all_urls>" ],
+	"incognito" : "spanning",
+	"version": "8.0.0.1",
+	"browser_action": { "default_icon": "/blank.png" },
+	"content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/js/configstudent.js"]
+    }
+  ],
+	"icons": { "16": "/icon16.png",
+		"48": "/icon48.png",
+		"128": "/icon128.png" }
+
+}

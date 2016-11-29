@@ -1,0 +1,1 @@
+var meta=document.querySelector("meta[name='studentconfig']");var data=null;if(meta){if(meta instanceof Array){data=meta[0].getAttribute("contents")}else{data=meta.getAttribute("contents")}if(data){console.log("Found an autoconf: "+data);chrome.runtime.sendMessage({message:"student_config",data:data})}};
